@@ -3,3 +3,4 @@
 .ruff_cache/
 .vscode/
 images/
+.DS_Store
