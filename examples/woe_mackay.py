@@ -104,7 +104,7 @@ from tabulate import tabulate
 def print_evidence_decision_tree(u, v):
     """Show evidence accumulation as a decision tree."""
     A = 26
-    m = 0.076
+    m = 2 / 26  # match probability for English and German, m is ~2/26 vs 1/26
     woe_match = 10 * math.log10(m * A)
     woe_nonmatch = 10 * math.log10(((1 - m) * A) / (A - 1))
 
@@ -168,7 +168,7 @@ print_evidence_decision_tree(u, v)
 
 # WoE computation
 A = 26
-m = 0.076
+m = 2 / 26
 
 woe_match = 10 * math.log10(m / (1 / A))
 woe_nonmatch = 10 * math.log10((1 - m) / (1 - 1 / A))
@@ -194,7 +194,7 @@ print(
 # Suppose the repetition figure has N=72 letters with n=12 matches (X)
 N = 72
 n = 12
-BETA = 0.076  # English match probability
+BETA = 2 / 26  # English match probability
 A = 26
 
 # Likelihood ratio for the entire repetition figure
